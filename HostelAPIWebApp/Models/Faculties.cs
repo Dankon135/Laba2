@@ -7,14 +7,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace HostelAPIWebApp.Models;
 public class Faculty
 {
+    [Key]
     public int FacultyID { get; set; }
+    [Required]
     public string Name { get; set; }
     public string DeanName { get; set; }
-    public virtual ICollection<Department> Departments { get; set; }
 
-    public Faculty()
-    {
-        Departments = new HashSet<Department>();
-    }
+    // Связь один ко многим с Departments
+    public virtual ICollection<Department> Departments { get; set; } = new HashSet<Department>();
 }
+
 

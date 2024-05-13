@@ -7,16 +7,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace HostelAPIWebApp.Models;
 public class Room
 {
+    [Key]
     public int RoomID { get; set; }
+    [Required]
     public string RoomNumber { get; set; }
     public int Capacity { get; set; }
-    public virtual ICollection<Accommodation> Accommodations { get; set; }
-    public virtual ICollection<RoomMaintenance> RoomMaintenances { get; set; }
 
-    public Room()
-    {
-        Accommodations = new HashSet<Accommodation>();
-        RoomMaintenances = new HashSet<RoomMaintenance>();
-    }
+    // Связи один ко многим
+    public virtual ICollection<Accommodation> Accommodations { get; set; } = new HashSet<Accommodation>();
+    public virtual ICollection<RoomMaintenance> RoomMaintenances { get; set; } = new HashSet<RoomMaintenance>();
 }
 
