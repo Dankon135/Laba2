@@ -13,7 +13,7 @@ public class Room
     public string RoomNumber { get; set; }
     public int Capacity { get; set; }
 
-    // Связи один ко многим
+    
     public virtual ICollection<Accommodation> Accommodations { get; set; } = new HashSet<Accommodation>();
     public virtual ICollection<RoomMaintenance> RoomMaintenances { get; set; } = new HashSet<RoomMaintenance>();
 }

@@ -13,7 +13,7 @@ public class Faculty
     public string Name { get; set; }
     public string DeanName { get; set; }
 
-    // Связь один ко многим с Departments
+    
     public virtual ICollection<Department> Departments { get; set; } = new HashSet<Department>();
 }
 

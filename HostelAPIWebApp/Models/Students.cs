@@ -14,11 +14,11 @@ public class Student
     [Required]
     public string LastName { get; set; }
 
-    // Внешний ключ для Department
+    
     [ForeignKey("Department")]
     public int DepartmentID { get; set; }
     public virtual Department Department { get; set; }
 
-    // Связь один к одному с Accommodation
+    
     public virtual Accommodation Accommodation { get; set; }
 }
